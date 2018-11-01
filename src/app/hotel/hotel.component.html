@@ -1,0 +1,78 @@
+<!-- <div class="container col-md-6">
+    <form class="form-signin" (ngSubmit)="producto()" #loginForm="ngForm">
+        <h3 class="form-signin-heading">Agregar Producto</h3>
+        <input type="text" class="form-control" placeholder="titulo" [(ngModel)]="productoData.name" name="name" required/>
+
+        <label name="stars" *ngFor="let v of productoData.stars; let i = index">
+            <input type="checkbox" [value]="i">
+            {{productoData.stars[i].name}}
+        </label>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
+    </form>
+</div> -->
+
+
+<div class="container-fluid header-am" style="background:#124280; height:100px;">
+    <div class="row">
+        <div class="col-sm-12">
+            <img src="assets/images/logo-almundo.svg" class="img-header" style="padding-top:25px; padding-bottom:25px;">
+        </div>
+    </div>
+</div>
+
+<div class="container listado" style="margin-top:30px; padding-left:0px; padding-right:0px;">
+    <div class="row col-sm-12">
+        <div class="col-sm-3 filtros">
+            <div class="card" style="width: 95%;">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>Filtros</strong></li>
+
+                </ul>
+            </div>
+
+            <form class="card card-sm">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><i class="fa fa-search text-body"></i><strong> Nombre del Hotel</strong></li>
+
+                </ul>
+                <div class="card-body row no-gutters align-items-center">
+                    <!--end of col-->
+                    <div class="col">
+                        <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Ingrese el nombre del hotel">
+                    </div>
+                    <!--end of col-->
+                    <div class="col-auto">
+                        <button class="btn btn-success buscar" type="submit">Aceptar</button>
+                    </div>
+                    <!--end of col-->
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-9 lista">
+            <div class="card" style="border: solid 1px #ccc; padding: 10px; margin-bottom:15px; background:#fff;" *ngFor='let hotel of hotels'>
+                <div class="row">
+                    <div class="col-md-4">
+                        <img [src]="'assets/images/hotels/' + hotel.image" class="w-100">
+                    </div>
+                    <div class="col-md-4 px-3">
+                        <div class="card-block px-3">
+                            <h4 class="card-title">{{hotel.name}}</h4>
+                            <p class="card-text"> <i class="fa fa-star" style="color:#df6800;" *ngFor="let c of hotel.stars; let x = index"></i></p>
+                            <img class="rounded" [src]="'assets/icons/amenities/' + hotel.amenities[j] + '.svg'" *ngFor="let item of hotel.amenities; let j = index" style="width: 25px; height: 25px; padding-right:7px;">
+                        </div>
+                    </div>
+                    <div class="col-md-3" style="padding:20px;">
+                        <p class="texto" style="color:#000; text-align:center; font-size:14px;">Precio por noche por habitación</p>
+                        <h4 class="price" style="color:#df6800; text-align:center;">ARS {{hotel.price}}</h4>
+                        <div class="text-center">
+                            <a href="#" class="btn btn-primary active ver-hotel">Ver Hotel</a>
+                            <!-- <button class="button button3" (click)="deleteHero()"><span class="fa fa-trash"></span></button> -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,109 @@
+.ver-hotel {
+    font-size: 15px;
+    width: 100%;
+    font-weight: 600;
+}
+
+.img-header {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.filtros .card {
+    border-radius: 0px;
+}
+
+.lista .card {
+    border-radius: 0px;
+}
+
+.card.card-sm.ng-untouched.ng-pristine.ng-valid {
+    width: 95%;
+    margin-top: 5px;
+}
+
+.form-control.form-control-lg.form-control-borderless {
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    font-size: 12px;
+    padding: 5px;
+    height: 30px;
+}
+
+.form-control-borderless:hover,
+.form-control-borderless:active,
+.form-control-borderless:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.btn.btn-success.buscar {
+    font-size: 12px;
+    padding: 5px !important;
+    margin-left: 5px;
+    background: #124280 !important;
+    border-color: #124280 !important;
+    font-weight: 400;
+}
+
+@media (max-width: 576px) {
+    div.listado {
+        margin-top: 15px !important;
+    }
+    h1,
+    h2,
+    h3,
+    h4 {
+        text-align: center;
+        padding-top: 10px;
+    }
+    h4.price {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    p.texto {
+        padding-bottom: 0px;
+        margin-bottom: 5px;
+    }
+    p.card-text {
+        text-align: center;
+    }
+    p.card-text {
+        text-align: center;
+    }
+    p.card-text img {
+        margin-left: 37% !important;
+        float: left !important;
+    }
+    img.img-header {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        padding-left: 25px !important;
+        padding-right: 25px !important;
+    }
+    .filtros .card {
+        margin-left: 15px;
+        margin-right: 15px;
+        width: 100% !important;
+        text-align: center;
+    }
+    .lista {
+        padding-left: 30px;
+        padding-right: 0px;
+        margin-top: 20px;
+        width: 100%;
+    }
+    .form-control.form-control-lg.form-control-borderless {
+        border: 1px solid #ccc;
+        border-radius: 0px;
+        font-size: 12px;
+        padding: 5px;
+        height: 30px;
+    }
+    .btn.btn-success.buscar {
+        font-size: 12px;
+        padding: 5 !important;
+        margin-left: 5px;
+    }
+}
