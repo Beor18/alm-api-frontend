@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HotelComponent } from './hotel/hotel.component';
-
+import { HotelFiltroPipe } from './hotel/hotelFiltro.pipe';
 const appRoutes: Routes = [
   {
     path: 'hoteles',
@@ -22,7 +22,8 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    HotelComponent
+    HotelComponent,
+    HotelFiltroPipe
   ],
   imports: [
     BrowserModule,

@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { Observable, of } from 'rxjs';
-import { tap, catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-producto',
   templateUrl: './hotel.component.html',
-  styleUrls: ['./hotel.component.css']
+  styleUrls: ['./hotel.component.css'],
 })
 export class HotelComponent implements OnInit {
   hotels: any;

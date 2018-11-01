@@ -31,7 +31,7 @@
                 </ul>
             </div>
 
-            <form class="card card-sm">
+            <div class="card card-sm filtro">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"><i class="fa fa-search text-body"></i><strong> Nombre del Hotel</strong></li>
 
@@ -39,7 +39,7 @@
                 <div class="card-body row no-gutters align-items-center">
                     <!--end of col-->
                     <div class="col">
-                        <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Ingrese el nombre del hotel">
+                        <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Ingrese el nombre del hotel" [(ngModel)]='listFilter' />
                     </div>
                     <!--end of col-->
                     <div class="col-auto">
@@ -47,10 +47,10 @@
                     </div>
                     <!--end of col-->
                 </div>
-            </form>
+            </div>
         </div>
         <div class="col-sm-9 lista">
-            <div class="card" style="border: solid 1px #ccc; padding: 10px; margin-bottom:15px; background:#fff;" *ngFor='let hotel of hotels'>
+            <div class="card" style="border: solid 1px #ccc; padding: 10px; margin-bottom:15px; background:#fff;" *ngFor='let hotel of hotels | hotelFiltro:listFilter'>
                 <div class="row">
                     <div class="col-md-4">
                         <img [src]="'assets/images/hotels/' + hotel.image" class="w-100">
