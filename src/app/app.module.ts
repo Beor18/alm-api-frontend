@@ -5,16 +5,16 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
-import { ProductoComponent } from './producto/producto.component';
+import { HotelComponent } from './hotel/hotel.component';
 
 const appRoutes: Routes = [
   {
-    path: 'productos',
-    component: ProductoComponent,
-    data: { title: 'Lista Productos' }
+    path: 'hoteles',
+    component: HotelComponent,
+    data: { title: 'Lista de Hoteles' }
   },
   { path: '',
-    redirectTo: '/productos',
+    redirectTo: '/hoteles',
     pathMatch: 'full'
   }
 ];
@@ -22,7 +22,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    ProductoComponent
+    HotelComponent
   ],
   imports: [
     BrowserModule,
