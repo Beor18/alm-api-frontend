@@ -4,6 +4,17 @@
     font-weight: 600;
 }
 
+.borrar-hotel {
+    margin-top: 10px;
+    font-size: 15px;
+    width: 100%;
+    font-weight: 600;
+}
+
+.list-group-item.titulo-filtro {
+    font-size: 15px !important;
+}
+
 .img-header {
     padding-top: 25px;
     padding-bottom: 25px;

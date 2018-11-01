@@ -13,15 +13,15 @@ export class HotelFiltroPipe implements PipeTransform {
             movie.name.toLocaleLowerCase().search(filter) !== -1) : value;
     }
 
-    private handleMap(res: any, id: number) {
+    private handleMap(res: any, id: string) {
         const data = <Hotels[]> res.json();
         // Return an initialized object
-        if (id === 0) {
+        if (id === '') {
             return {
                 'name': ''
             };
         }
-        const filtered = data.filter(m => m.id === id);
+        const filtered = data.filter(m => m._id === id);
         return <Hotels> filtered[0];
 }
 }

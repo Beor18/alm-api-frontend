@@ -1,6 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
+import { Hotels } from './hotel';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json'
+  })
+};
 
 @Component({
   selector: 'app-producto',
@@ -9,11 +18,13 @@ import { Router } from '@angular/router';
 })
 export class HotelComponent implements OnInit {
   hotels: any;
-  productoData = { name: '', stars: [{ id: 1, name: '1'}, { id: 2, name: '2'}, { id: 3, name: '3'}, { id: 4, name: '4'}]};
+  productoData = { name: '', stars: ['1', '2', '3', '4']};
   data: any;
+  _id: '';
   message = 'Ups hubo un error!';
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) {
+  }
 
   ngOnInit() {
     this.http.get(`http://localhost:5000/api/hoteles`).subscribe(data => {
@@ -35,4 +46,17 @@ export class HotelComponent implements OnInit {
     });
   }
 
+  deleteHero (hotel: Hotels | string): Observable<Hotels> {
+    const id = typeof hotel === 'string' ? hotel : hotel._id;
+    const url = `http://localhost:5000/api/hotel/delete/${id}`;
+    return this.http.delete<Hotels>(url, httpOptions);
+  }
+
+  delete(hotel: Hotels) {
+    this.hotels = this.hotels.filter(h => h !== hotel);
+    this.deleteHero(hotel).subscribe(result => {
+    }, error => console.log('Borrado con exito: ', error.status)
+  );
+  }
 }
+
