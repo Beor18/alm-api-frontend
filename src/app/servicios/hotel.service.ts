@@ -15,7 +15,6 @@ const httpOptions = {
 })
 export class HotelService {
   hotels: any;
-  productoData = { name: '', stars: ['1', '2', '3', '4']};
   _id: '';
   message = 'Ups hubo un error!';
 

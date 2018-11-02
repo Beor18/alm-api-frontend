@@ -11,8 +11,6 @@ import {HotelService } from '../servicios/hotel.service';
 })
 export class HotelComponent implements OnInit {
   hotels: any;
-  productoData = { name: '', stars: ['1', '2', '3', '4']};
-  data: any;
   _id: '';
   message = 'Ups hubo un error!';
 
@@ -24,7 +22,7 @@ export class HotelComponent implements OnInit {
   }
 
   getHotels() {
-    this.hotelService.getHoteles().subscribe(data => this.hotels = data['hotels']);
+    this.hotelService.getHoteles().subscribe(hotels => this.hotels = hotels['hotels']);
   }
 
   delete(hotel: Hotels) {
