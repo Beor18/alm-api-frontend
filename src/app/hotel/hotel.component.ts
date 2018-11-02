@@ -27,6 +27,10 @@ export class HotelComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getHoteles();
+  }
+
+  getHoteles() {
     this.http.get(`http://localhost:5000/api/hoteles`).subscribe(data => {
       this.hotels = data['hotels'];
       console.log(this.hotels);
@@ -55,6 +59,7 @@ export class HotelComponent implements OnInit {
   delete(hotel: Hotels) {
     this.hotels = this.hotels.filter(h => h !== hotel);
     this.deleteHero(hotel).subscribe(result => {
+      console.log(result);
     }, error => console.log('Borrado con exito: ', error.status)
   );
   }
