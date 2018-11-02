@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HotelComponent } from './hotel/hotel.component';
 import { HotelFiltroPipe } from './hotel/hotelFiltro.pipe';
+import {HotelService } from './servicios/hotel.service';
 const appRoutes: Routes = [
   {
     path: 'hoteles',
@@ -34,7 +35,7 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [],
+  providers: [HotelService],
   bootstrap: [AppComponent]
 })
 
