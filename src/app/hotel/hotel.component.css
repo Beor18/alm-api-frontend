@@ -9,6 +9,8 @@ h4.card-title.titulo-hotels {
     font-size: 15px;
     width: 100%;
     font-weight: 600;
+    background: #002c77 !important;
+    border-color: #002c77 !important;
 }
 
 .borrar-hotel {
