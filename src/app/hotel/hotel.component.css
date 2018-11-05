@@ -14,7 +14,8 @@
 }
 
 .fa.fa-star {
-    color: #fdba12;
+    color: #ffdc00;
+    margin: 0 2px;
 }
 
 .rounded.amenities {
@@ -170,6 +171,28 @@ strong.precio {
 @media (max-width: 576px) {
     div.listado {
         margin-top: 15px !important;
+        padding: 0px !important;
+    }
+    .img-thumbnail {
+        max-width: 94%;
+        height: 236px;
+    }
+    .lista {
+        padding-left: 0px !important;
+        padding-right: 0px;
+        margin-left: 15px;
+        margin-right: -15px;
+    }
+    .col-md-4.final {
+        border-left: none !important;
+    }
+    .rounded.amenities {
+        width: 40px;
+        height: 25px;
+        padding-left: 14px;
+        float: left;
+        margin-left: 8px;
+        text-align: center;
     }
     h1,
     h2,
