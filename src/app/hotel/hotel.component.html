@@ -12,15 +12,15 @@
 </div> -->
 
 
-<div class="container-fluid header-am " style="background:#124280; height:100px; ">
+<div class="container-fluid header-am">
     <div class="row ">
         <div class="col-sm-12 ">
-            <img src="assets/images/logo-almundo.svg " class="img-header " style="padding-top:25px; padding-bottom:25px; ">
+            <img src="assets/images/logo-almundo.svg " class="img-header " style="padding-top:15px; ">
         </div>
     </div>
 </div>
 
-<div class="container listado " style="margin-top:30px; padding-left:0px; padding-right:0px; ">
+<div class="container-fluid listado ">
     <div class="row col-sm-12 ">
         <div class="col-sm-3 filtros ">
             <div class="card " style="width: 95%; ">
@@ -32,7 +32,7 @@
 
             <div class="card card-sm filtro ">
                 <ul class="list-group list-group-flush ">
-                    <li class="list-group-item titulo-filtro"><i class="fa fa-search text-body" style="color: #157ab1 !important;"></i><strong> Nombre del Hotel</strong></li>
+                    <li class="list-group-item titulo-filtro"><i class="fa fa-search text-body"></i><strong> Nombre del Hotel</strong></li>
 
                 </ul>
                 <div class="card-body row no-gutters align-items-center ">
@@ -49,21 +49,21 @@
             </div>
         </div>
         <div class="col-sm-9 lista ">
-            <div class="card " style="border: solid 1px #ccc; padding: 10px; margin-bottom:15px; background:#fff; " *ngFor='let hotel of hotels | hotelFiltro:listFilter'>
+            <div class="card individual" *ngFor='let hotel of hotels | hotelFiltro:listFilter'>
                 <div class="row ">
-                    <div class="col-md-5 ">
-                        <img [src]=" 'assets/images/hotels/' + hotel.image " class="w-100 ">
+                    <div class="col-md-4 imagen">
+                        <img [src]=" 'assets/images/hotels/' + hotel.image " class="img-thumbnail ">
                     </div>
-                    <div class="col-md-4 px-3 ">
+                    <div class="col-md-4 px-3 medio">
                         <div class="card-block px-3 ">
                             <h4 class="card-title titulo-hotels">{{hotel.name}}</h4>
-                            <p class="card-text "> <i class="fa fa-star " style="color:#fdba12; " *ngFor="let c of hotel.stars; let x=index "></i></p>
-                            <img class="rounded " [src]=" 'assets/icons/amenities/' + hotel.amenities[j] + '.svg' " *ngFor="let item of hotel.amenities; let j=index " style="width: 25px; height: 25px; padding-right:7px; ">
+                            <p class="card-text estrellas"> <i class="fa fa-star " *ngFor="let c of intToArray(hotel.stars)"></i></p>
+                            <img class="rounded amenities" [src]=" 'assets/icons/amenities/' + hotel.amenities[j] + '.svg' " *ngFor="let item of hotel.amenities; let j=index ">
                         </div>
                     </div>
-                    <div class="col-md-3 " style="padding-top:20px; ">
-                        <p class="texto " style="color:#000; text-align:center; font-size:14px; ">Precio por noche por habitación</p>
-                        <h4 class="price " style="color:#df6800; text-align:center; font-weight:600;"> <strong style="font-size:18px; font-weight: 300;"> ARS</strong> {{hotel.price}}</h4>
+                    <div class="col-md-4 final">
+                        <p class="texto ">Precio por noche por habitación</p>
+                        <h4 class="price "> <strong class="precio"> ARS</strong> {{hotel.price}}</h4>
                         <div class="text-center ">
                             <a href="# " class="btn btn-primary active ver-hotel ">Ver hotel</a>
                             <button class="btn btn-danger active borrar-hotel" (click)="delete(hotel)"><span class="fa fa-trash "></span> Borrar hotel</button>

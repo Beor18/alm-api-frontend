@@ -25,6 +25,10 @@ export class HotelComponent implements OnInit {
     this.hotelService.getHoteles().subscribe(hotels => this.hotels = hotels['hotels']);
   }
 
+  intToArray ( stars: number ) {
+    return new Array(stars);
+}
+
   delete(hotel: Hotels) {
     this.hotels = this.hotels.filter(h => h !== hotel);
     this.hotelService.deleteHero(hotel).subscribe(result => {

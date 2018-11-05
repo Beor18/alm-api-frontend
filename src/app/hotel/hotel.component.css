@@ -1,8 +1,70 @@
+.header-am {
+    background: #124280;
+    height: 80px;
+}
+
+.listado {
+    margin-top: 20px;
+    padding-left: 40px;
+    padding-right: 15px;
+}
+
+.card-text.estrellas {
+    margin-bottom: 5px;
+}
+
+.fa.fa-star {
+    color: #fdba12;
+}
+
+.rounded.amenities {
+    width: 25px;
+    height: 25px;
+    padding-right: 7px;
+}
+
+.col-md-4.final {
+    padding: 30px 22px;
+    border-left: 1px dashed #CCC;
+}
+
+p.texto {
+    color: #000;
+    text-align: center;
+    font-size: 14px;
+}
+
+.fa.fa-search.text-body {
+    color: #157ab1 !important;
+}
+
+.card.individual {
+    padding: 5px;
+    margin-bottom: 15px;
+    background: #fff;
+    box-shadow: 0 1px 2px hsla(0, 0%, 78%, .66);
+}
+
 h4.card-title.titulo-hotels {
-    color: #157ab1;
-    font-weight: 600;
     text-transform: capitalize;
-    font-size: 19px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #0679b3;
+    margin-bottom: 5px;
+}
+
+.card-block {
+    padding-left: 0px !important;
+    margin-top: 5px;
+}
+
+.col-md-4.imagen {
+    padding-right: 0px !important;
+}
+
+.col-md-4.medio {
+    padding: 0px !important;
+    margin: 0px !important;
 }
 
 .ver-hotel {
@@ -21,8 +83,9 @@ h4.card-title.titulo-hotels {
 }
 
 .list-group-item.titulo-filtro {
-    font-size: 15px !important;
+    font-size: 14px !important;
     color: #157ab1;
+    font-weight: 300 !important;
 }
 
 .img-header {
@@ -34,8 +97,27 @@ h4.card-title.titulo-hotels {
     border-radius: 0px;
 }
 
+.lista {
+    padding: 0px;
+    margin: 0px;
+}
+
 .lista .card {
     border-radius: 0px;
+}
+
+.img-thumbnail {
+    padding: none !important;
+    background-color: none !important;
+    border: none !important;
+    border-radius: none !important;
+    max-width: 100%;
+    height: 236px;
+}
+
+.filtros {
+    padding: 0px;
+    margin: 0px;
 }
 
 .card.card-sm.filtro {
@@ -71,6 +153,18 @@ h4.card-title.titulo-hotels {
     background: #124280 !important;
     border-color: #124280 !important;
     font-weight: 400;
+}
+
+h4.price {
+    margin-bottom: 20px !important;
+    color: #df6800;
+    text-align: center;
+    font-weight: 600;
+}
+
+strong.precio {
+    font-size: 18px;
+    font-weight: 300;
 }
 
 @media (max-width: 576px) {
