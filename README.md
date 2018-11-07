@@ -11,4 +11,4 @@ $ ng serve
 
 #### Demo:
 
-![Imgur](https://i.imgur.com/CvwePaE.png)
+![Imgur](https://i.imgur.com/am1Yn7z.png)

@@ -168,6 +168,46 @@ strong.precio {
     font-weight: 300;
 }
 
+.checkboxes {
+    padding: 20px;
+}
+
+.checkbox-label {
+    font-size: .9rem;
+    margin-top: 9px;
+}
+
+.titulo-filtro-estrella {
+    font-size: 14px;
+    color: #157ab1;
+    font-weight: 200;
+}
+
+.titulo-todas-estrellas {
+    font-size: 12px;
+}
+
+.check-estrella {
+    float: left !important;
+    margin-top: 5px !important;
+    margin-right: 5px !important;
+}
+
+.checkbox-div {
+    margin-top: -15px;
+}
+
+.filtro-estrellas {
+    float: left !important;
+    margin-top: 0px !important;
+}
+
+.stars-checkbox {
+    float: left !important;
+    margin-top: 5px !important;
+    margin-right: 5px !important;
+}
+
 @media (max-width: 576px) {
     div.listado {
         margin-top: 15px !important;

@@ -11,6 +11,9 @@ import {HotelService } from '../servicios/hotel.service';
 })
 export class HotelComponent implements OnInit {
   hotels: any;
+  // tslint:disable-next-line:max-line-length
+  options = [ {name:'5', value:5, checked:false}, {name:'4', value:4, checked:false}, {name:'3', value:3, checked:false}, {name:'2', value:2, checked:false}, {name:'1', value:1, checked:false} ];
+  starsQuery = [];
   _id: '';
   message = 'Ups hubo un error!';
 
@@ -27,6 +30,15 @@ export class HotelComponent implements OnInit {
 
   intToArray ( stars: number ) {
     return new Array(stars);
+}
+
+setHotelStars ( stars: number, checked: boolean ) {
+  if (checked) {
+    this.starsQuery.push(stars);
+  } else {
+    this.starsQuery.splice(this.starsQuery.indexOf(stars), 1);
+  }
+  this.hotelService.getHotelesPorStars(this.starsQuery).subscribe(star => this.options = star['hotels.stars']);
 }
 
   delete(hotel: Hotels) {

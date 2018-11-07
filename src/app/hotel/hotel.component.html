@@ -47,6 +47,26 @@
                     <!--end of col-->
                 </div>
             </div>
+
+            <div class="card card-sm filtro ">
+                <ul class="list-group list-group-flush ">
+                    <li class="list-group-item titulo-filtro-estrella"><i class="fa fa-star" style="color:#0679b3 !important;"></i><strong> Estrellas (en desarrollo)</strong></li>
+
+                </ul>
+
+                <div class="checkboxes" style="padding:20px;">
+                    <div class="checkbox-div">
+                        <label class="checkbox-label">
+                  <input class="check-estrella" type="checkbox" name="all" value="all"/> <strong class="titulo-todas-estrellas"> Todas las estrellas</strong>
+                </label>
+                    </div>
+                    <div *ngFor="let option of options" class="checkbox-div">
+                        <label class="checkbox-label">
+                    <input class="stars-checkbox" type="checkbox" name="{{option.name}}" (change)="setHotelStars(option.value, option.checked)" value="{{option.value}}" [(ngModel)]="option.checked"/> <i class="fa fa-star " *ngFor="let g of intToArray(option.value)"></i>
+                </label>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col-sm-9 lista ">
             <div class="card individual" *ngFor='let hotel of hotels | hotelFiltro:listFilter'>

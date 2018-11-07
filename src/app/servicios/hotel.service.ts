@@ -17,6 +17,7 @@ const httpOptions = {
 export class HotelService {
   hotels: any;
   _id: '';
+  stars: '';
   message = 'Ups hubo un error!';
 
   constructor(private http: HttpClient, private router: Router) { }
@@ -24,6 +25,12 @@ export class HotelService {
   getHoteles (): Observable<Hotels[]> {
     return this.http.get<Hotels[]>(`http://localhost:5000/api/hoteles`).pipe(
       catchError(this.handleError('getHoteles', []))
+    );
+  }
+
+  getHotelesPorStars(stars): Observable<any> {
+    return this.http.get('http://localhost:5000/api' + '/stars/' + stars).pipe(
+      catchError(this.handleError<any>('getHotelesPorStars'))
     );
   }
 
