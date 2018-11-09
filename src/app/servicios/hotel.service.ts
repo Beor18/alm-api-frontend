@@ -28,15 +28,15 @@ export class HotelService {
     );
   }
 
-  getHotelesPorStars(stars): Observable<any> {
-    return this.http.get('http://localhost:5000/api' + '/stars/' + stars).pipe(
+  getHotelesPorStars(stars): Observable<Hotels[]> {
+    return this.http.get<Hotels[]>('http://localhost:5000/api' + '/stars/' + stars).pipe(
       catchError(this.handleError<any>('getHotelesPorStars'))
     );
   }
 
   deleteHero (hotel: Hotels | string): Observable<Hotels> {
     const id = typeof hotel === 'string' ? hotel : hotel._id;
-    const url = `http://localhost:5000/api/hotel/delete/${id}`;
+    const url = `http://localhost:5000/api/hoteles/${id}`;
     return this.http.delete<Hotels>(url, httpOptions ).pipe(
       catchError(this.handleError<Hotels>('deleteHero'))
     );

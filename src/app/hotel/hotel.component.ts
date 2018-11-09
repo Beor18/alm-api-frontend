@@ -30,16 +30,19 @@ export class HotelComponent implements OnInit {
 
   intToArray ( stars: number ) {
     return new Array(stars);
-}
-
-setHotelStars ( stars: number, checked: boolean ) {
-  if (checked) {
-    this.starsQuery.push(stars);
-  } else {
-    this.starsQuery.splice(this.starsQuery.indexOf(stars), 1);
   }
-  this.hotelService.getHotelesPorStars(this.starsQuery).subscribe(star => this.options = star['hotels.stars']);
-}
+
+  setHotelStars ( stars: number, checked: boolean ) {
+    if (checked) {
+      this.starsQuery.push(stars);
+    } else {
+      this.starsQuery.splice(this.starsQuery.indexOf([stars]), 1);
+    }
+    this.hotelService.getHotelesPorStars(this.starsQuery).subscribe(star => {
+      this.starsQuery = star;
+      console.log(this.starsQuery);
+    });
+  }
 
   delete(hotel: Hotels) {
     this.hotels = this.hotels.filter(h => h !== hotel);
