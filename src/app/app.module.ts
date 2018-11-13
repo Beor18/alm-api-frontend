@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HotelComponent } from './hotel/hotel.component';
-import { HotelFiltroPipe } from './hotel/hotelFiltro.pipe';
+import { HotelFiltroPipe } from './hotel-filtro.pipe';
 import {HotelService } from './servicios/hotel.service';
 import { AmHeaderComponent } from './am-header/am-header.component';
 const appRoutes: Routes = [
