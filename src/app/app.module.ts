@@ -9,6 +9,7 @@ import { HotelComponent } from './hotel/hotel.component';
 import { HotelFiltroPipe } from './hotel-filtro.pipe';
 import {HotelService } from './servicios/hotel.service';
 import { AmHeaderComponent } from './am-header/am-header.component';
+import { HotelDetalleComponent } from './hotel-detalle/hotel-detalle.component';
 const appRoutes: Routes = [
   {
     path: 'hoteles',
@@ -18,7 +19,8 @@ const appRoutes: Routes = [
   { path: '',
     redirectTo: '/hoteles',
     pathMatch: 'full'
-  }
+  },
+  { path: 'hoteles/:id', component: HotelDetalleComponent },
 ];
 
 @NgModule({
@@ -26,7 +28,8 @@ const appRoutes: Routes = [
     AppComponent,
     HotelComponent,
     HotelFiltroPipe,
-    AmHeaderComponent
+    AmHeaderComponent,
+    HotelDetalleComponent
   ],
   imports: [
     BrowserModule,

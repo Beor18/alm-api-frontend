@@ -34,6 +34,13 @@ export class HotelService {
     );
   }
 
+  getHotelDetalle(_id: number): Observable<Hotels> {
+    const url = 'http://localhost:5000/api/hoteles/' + _id;
+    return this.http.get<Hotels>(url).pipe(
+      catchError(this.handleError<Hotels>(`getHotelDetalle id=${_id}`))
+    );
+  }
+
   deleteHero (hotel: Hotels | string): Observable<Hotels> {
     const id = typeof hotel === 'string' ? hotel : hotel._id;
     const url = `http://localhost:5000/api/hoteles/${id}`;
