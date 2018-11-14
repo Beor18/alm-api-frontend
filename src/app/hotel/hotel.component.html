@@ -77,7 +77,7 @@
                         <p class="texto ">Precio por noche por habitación</p>
                         <h4 class="price "> <strong class="precio"> ARS</strong> {{hotel.price}}</h4>
                         <div class="text-center ">
-                            <a href="# " class="btn btn-primary active ver-hotel ">Ver hotel</a>
+                            <a routerLink="/hoteles/{{hotel._id}}" class="btn btn-primary active ver-hotel ">Ver hotel</a>
                             <button class="btn btn-danger active borrar-hotel" (click)="delete(hotel)"><span class="fa fa-trash "></span> Borrar hotel</button>
                         </div>
                     </div>

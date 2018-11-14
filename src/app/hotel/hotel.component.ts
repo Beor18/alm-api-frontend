@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Hotels } from './hotel';
 import {HotelService } from '../servicios/hotel.service';
 
@@ -17,11 +17,12 @@ export class HotelComponent implements OnInit {
   _id: '';
   message = 'Ups hubo un error!';
 
-  constructor(private hotelService: HotelService) {
+  constructor(private hotelService: HotelService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
     this.getHotels();
+    this.route.params.subscribe( params => this._id = params._id );
   }
 
   getHotels() {
