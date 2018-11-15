@@ -62,9 +62,9 @@
         </div>
         <div class="col-sm-9 lista ">
             <div class="card individual" *ngFor='let hotel of hotels | hotelFiltro:listFilter'>
-                <div class="row ">
-                    <div class="col-md-4 imagen">
-                        <img [src]=" 'assets/images/hotels/' + hotel.image " class="img-thumbnail ">
+                <div class="row " style="margin-left: 0px; margin-right: 0px;">
+                    <div class="col-md-4 imagen" [style.background]="'url(assets/images/hotels/' + hotel.image + ')'">
+
                     </div>
                     <div class="col-md-4 px-3 medio">
                         <div class="card-block px-3 ">
