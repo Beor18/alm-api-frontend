@@ -11,6 +11,8 @@ const httpOptions = {
   })
 };
 
+const URL_BASE = 'http://almundo-examen.herokuapp.com/api';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -23,19 +25,19 @@ export class HotelService {
   constructor(private http: HttpClient, private router: Router) { }
 
   getHoteles (): Observable<Hotels[]> {
-    return this.http.get<Hotels[]>(`http://localhost:5000/api/hoteles`).pipe(
+    return this.http.get<Hotels[]>(URL_BASE + `/hoteles`).pipe(
       catchError(this.handleError('getHoteles', []))
     );
   }
 
   getHotelesPorStars(stars): Observable<Hotels[]> {
-    return this.http.get<Hotels[]>('http://localhost:5000/api' + '/stars/' + stars).pipe(
+    return this.http.get<Hotels[]>(URL_BASE + '/stars/' + stars).pipe(
       catchError(this.handleError<any>('getHotelesPorStars'))
     );
   }
 
   getHotelDetalle(_id: number): Observable<Hotels> {
-    const url = 'http://localhost:5000/api/hoteles/' + _id;
+    const url = URL_BASE + '/hoteles/' + _id;
     return this.http.get<Hotels>(url).pipe(
       catchError(this.handleError<Hotels>(`getHotelDetalle id=${_id}`))
     );
@@ -43,7 +45,7 @@ export class HotelService {
 
   deleteHero (hotel: Hotels | string): Observable<Hotels> {
     const id = typeof hotel === 'string' ? hotel : hotel._id;
-    const url = `http://localhost:5000/api/hoteles/${id}`;
+    const url = URL_BASE + `/hoteles/${id}`;
     return this.http.delete<Hotels>(url, httpOptions ).pipe(
       catchError(this.handleError<Hotels>('deleteHero'))
     );
