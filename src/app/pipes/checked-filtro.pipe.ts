@@ -9,7 +9,7 @@ export class CheckedFiltroPipe implements PipeTransform {
     console.log('Filtering ..');
     if (filter && Array.isArray(value) && filterItems) {
       let filterKeys = Object.keys(filter);
-      let checkedItems = filterItems.filter(item => { return value.checked; });
+      let checkedItems = filterItems.filter(item => { return value; });
       if (!checkedItems || checkedItems.length === 0) { return value; }
       if (stars) {
         return value.filter(item =>

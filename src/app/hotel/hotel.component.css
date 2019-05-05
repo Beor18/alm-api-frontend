@@ -6,6 +6,8 @@
 
 .card-text.estrellas {
     margin-bottom: 5px;
+    display: inline-flex;
+    flex-wrap: nowrap;
 }
 
 .fa.fa-star {
@@ -199,6 +201,12 @@ strong.precio {
 }
 
 @media (max-width: 576px) {
+    .col-md-4.imagen {
+        background-size: cover;
+        height: 200px;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
     div.listado {
         margin-top: 15px !important;
         padding: 0px !important;
@@ -217,12 +225,7 @@ strong.precio {
         border-left: none !important;
     }
     .rounded.amenities {
-        width: 40px;
-        height: 25px;
-        padding-left: 14px;
-        float: left;
-        margin-left: 8px;
-        text-align: center;
+        display: inline-flex;
     }
     h1,
     h2,
